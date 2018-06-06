@@ -1,0 +1,213 @@
+LENGUAJE C --> Kernighan y Ritchie
+
+Caracteristicas
+
+ C               -------------    Python
+- compilado	                 - interpretado 
+- bajo nivel	                 - alto nivel (las instrucciones estan mas lejos del lenguaje que entiende la máquina)
+- tipado estático                - tipado dinámico
+- no existe tipo string
+
+
+Programar en C
+
+- No chequea sangrias
+- Toda instrucción lleva punto y coma (;)
+
+// (comentario hasta el final de la línea, se cierra cuando cambio de linea)
+/* (comentario de varias lineas) 
+\* (cierro comentario de varias lineas)
+
+
+#include <stdio.h> (incluye la libreria donde estan las funciones básicas)
+int main() --> (no lleva ;), (cabecera de una función, función main, función desde donde inicia), (en este caso, parámetros vacíos)
+{ (abro un bloque)
+	printf("Hola Mundo!!!");
+	return 0;
+} (cierro un bloque)
+
+
+- Incluye libreria stdio (std-->standard, i--> input, o--> output, h --> header (cabecera)), la función printf esta definida ahi dentro
+- printf (f de formato)
+- Los strings van en comillas dobles 
+- int --> tipo de dato que devuelve
+- Entre paréntesis van los parámetros
+
+
+COMPILADORES
+
+- Borland (no usar) 
+- Visual c++ (no usar)
+- GNU --> Gcc --> Min Gw (Windows), Gcc (Linux)
+
+- Para ejecutar guardo el archivo con la extensión .c
+- Compilo desde un compilador y me genera un ejecutable (para cambiarle el nombre a ese ejecutable --> -o"nombrejecutable"
+- IDE (Integrado Desarrollo Entorno) --> Dev c++, Eclipse, Code Blocks
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+
+#include <stdio.h>
+(si declaro una variable aca, sirve para todas las funciones, y eso no estarpia bien, por eso la declaro adentro del main)
+
+int main()
+{
+	int x;
+	x = 65;
+	printf("%d", x); // %d es el formato, es decimal, si no le pongo formato me va a tirar un warning
+	printf(%d, x);   // imprime una A
+	return 0;
+}
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+Tipos de datos 
+
+Númericos --> enteros --> char --> en general ocupa un byte (8 bits, 2^8 --> rango de -128 a 127)
+	              --> int  --> puede ocupar 2 bytes (16 bits, 2^16) (computadoras viejas), 4 bytes (32 bits, 2^32) (lo más común), 8 bytes
+	  --> flotantes (con coma) --> float --> si ocupa 4 bytes
+				   --> double --> si ocupa 8 bytes
+
+
+printf("%d\n", sizeof(char)) --> para saber cuanto ocupa
+
+S --> strings
+d --> enteros
+c --> caracter 
+f --> flotantes
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+Modificadores
+
+- De signo
+
+int x: por defecto es un entero con signos positivos y negativos
+
+unsigned int x; (comienza en 0 no utiliza negativos)
+signed int x; (por defecto toma los signos)
+
+unsigned char (edad); --> se que la edad no puede ser negativa, rango de [0 a 255]
+
+- De tamaño
+
+short int 
+long int 
+
+[short int] <= [int] <= [long int]
+    2            4          4
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+#include <stdio.h>
+int main
+{
+	unsigned char edad;
+	printf("Ingresa tu edad: ");
+	scanf("%d", &edad);
+	if (edad >= 18)
+		printf("Sos mayor");
+	else
+		printf("Sos menos, no podes entrar =)")
+	return 0;
+}	
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+|| --> o
+&& --> y
+!  --> negación
+
+if (x < 5 && (y < 4 || z == 3) 
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+int x;
+pritnf("Ingrese un número del 1 al 10: ");
+scanf("%d", x);
+switch(x) {
+	case 1: printf("Uno"); break; // solo usar break en un switch
+	case 2: printf("Dos"); break;
+	.
+	.	
+	.
+	.
+	case 10: printf("Diez"); break;
+	default: printf("Nro. incorrecto");
+
+}
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+Ciclos
+
+int i;
+i = 1;
+while (i < 10) {
+	printf("%d\n", i);
+	i ++;
+}
+
+
+// otra forma
+
+int i = 1;
+do { 
+	printf("%d\n", i);
+	i++;
+} while (i < 10);
+
+
+// Ciclo for
+
+int i;
+
+//for (inicialización [solo de ejecuta la primera vez]; condición, incremento) 
+
+for ( i = 1; i < 10; i++) {
+	printf("%d\n", i);
+}
+
+// otra forma
+
+for( int i = 1; i < 10; printf("%d\n", i), i++);
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+Funciones
+
+tipoDeRetorno nombre(parametros) {
+codigo...
+}
+
+ejemplo:
+
+sumar(int x, int y)
+{
+	int resultado;
+	resultado = x + y;
+	return resultado;
+}
+
+// Ahora no devolvemos nada, devolvemos un mensaje
+
+void imprimir(int x)
+{
+	printf("...\n")
+}
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+// Hacer una función que le paso un número entero n y me devuelve si es primo o no
+
+
+
+
+
